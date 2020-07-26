@@ -3,4 +3,4 @@ Type=Application
 Terminal=true
 Name=NoMachine-Docker
 Icon=/usr/share/icons/docker/nomachine.png
-Exec=/usr/local/bin/startnomachine.sh
+Exec=sh /usr/local/bin/startnomachine.sh
