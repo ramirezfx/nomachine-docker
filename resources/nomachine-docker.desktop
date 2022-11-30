@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Terminal=true
-Name=NoMachine-Docker
-Icon=/usr/share/icons/docker/nomachine.png
-Exec=sh /usr/local/bin/startnomachine.sh
