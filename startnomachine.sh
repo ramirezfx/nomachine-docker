@@ -4,8 +4,8 @@ HOME="$(echo ~)"
 
 set -e
 
-if [[ -n "$(docker ps -qaf 'name=ramirezfx/nomachine:latest')" ]]; then
-	docker restart ramirezfx/nomachine:latest
+if [[ -n "$(docker ps -qaf 'name=ramirezfx/nomachine:latest-at')" ]]; then
+	docker restart ramirezfx/nomachine:latest-at
 else
 	USER_UID=$(id -u)
 	USER_GID=$(id -g)
@@ -20,5 +20,5 @@ else
 		--volume=/tmp/.X11-unix:/tmp/.X11-unix:ro \
 		--volume=/run/user/$USER_UID/pulse:/run/pulse:ro \
 		--name nomachine \
-		ramirezfx/nomachine:latest
+		ramirezfx/nomachine:latest-at
 fi
