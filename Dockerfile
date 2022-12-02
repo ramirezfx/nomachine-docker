@@ -17,11 +17,6 @@ RUN apt-get install -y wget pulseaudio dbus-x11 procps psmisc cups wget xfonts-1
 RUN DLLINK=$(wget --save-headers --output-document - https://downloads.nomachine.com/de/download/?id=5 | grep download.nomachine.com | cut -d '"' -f6 | head -1) && wget -O /nomachine.deb $DLLINK && \
     apt-get install -y /nomachine.deb
 
-# Install latest Chrome
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/google-chrome-stable_current_amd64.deb && \
-    apt-get install -y /tmp/google-chrome-stable_current_amd64.deb
-
-
 #  --- End Custom Code
 
 RUN rm -rf /var/lib/apt/lists/*
