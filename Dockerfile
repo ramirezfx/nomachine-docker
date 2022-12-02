@@ -14,7 +14,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
 RUN apt-get install -y wget pulseaudio dbus-x11 procps psmisc cups wget xfonts-100dpi-transcoded xfonts-75dpi xfonts-75dpi-transcoded
 
 # Custom Script(s) here:
-DLLINK=$(wget --save-headers --output-document - https://downloads.nomachine.com/de/download/?id=5 | grep download.nomachine.com | cut -d '"' -f6 | head -1) && wget -O /nomachine.deb $DLLINK && \
+RUN DLLINK=$(wget --save-headers --output-document - https://downloads.nomachine.com/de/download/?id=5 | grep download.nomachine.com | cut -d '"' -f6 | head -1) && wget -O /nomachine.deb $DLLINK && \
     apt-get install -y /nomachine.deb
 
 # Install latest Chrome
